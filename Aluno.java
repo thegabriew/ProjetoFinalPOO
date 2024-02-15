@@ -3,7 +3,7 @@ private class Aluno{
   private String nome;
   private int codAluno;
   private String cpf;
-  private date dataNascimento;
+  private String dataNascimento;
   private String pagamento;
   private String email;
   private int telefone;
@@ -37,7 +37,7 @@ private class Aluno{
     this.dataNascimento = dataNascimento;
   }
 
-  date getDataNascimento(){
+  String getDataNascimento(){
     return this.dataNascimento;
   }
   
