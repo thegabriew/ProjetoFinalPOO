@@ -5,6 +5,7 @@ private int codFuncionario;
 private String cpf;
 private String dataNascimento;
 private String email;
+private String cargo;
 private int telefone;
 private String dataContratacao;
 private float salario;
@@ -39,6 +40,14 @@ private float salario;
 
   private void setDataNascimento(Date dataNascimento) {
     this.dataNascimento = dataNascimento;
+  }
+
+   private String getCargo() {
+    return cargo;
+  }
+
+  private void setCargo(Date cargo) {
+    this.cargo = cargo;
   }
 
   private String getEmail() {
