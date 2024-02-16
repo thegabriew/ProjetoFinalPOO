@@ -1,7 +1,7 @@
 __Projeto Final POO__
 
-## Academia Gigantes de Aço
-# Seu shape não será apenas um sonho
+# Academia Gigantes de Aço
+## Seu shape não será apenas um sonho
 
 1 - Cadastro de Clientes: Registrar novos clientes no sistema. Informações do cliente, nome, CPF, número de telefone, e-mail, data de nascimento e plano.
 ------------------------------------------------------------
