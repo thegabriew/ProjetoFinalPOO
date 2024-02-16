@@ -26,4 +26,5 @@ D - Deletar algo do banco.
 ____________________________________________________________
 
 Identificar as classes e operações que o sistema proposto possui.
+
 Modelar banco de dados e criar arquivo esquema do banco de dados.
