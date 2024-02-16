@@ -28,3 +28,8 @@ ____________________________________________________________
 Identificar as classes e operações que o sistema proposto possui.
 
 Modelar banco de dados e criar arquivo esquema do banco de dados.
+
+Conceitual
+---------
+
+![alt text](path/to/https://github.com/thegabriew/ProjetoFinalPOO/blob/main/Modelos/Conceitual.png)
