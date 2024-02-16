@@ -32,4 +32,4 @@ Modelar banco de dados e criar arquivo esquema do banco de dados.
 Conceitual
 ---------
 
-![alt text](path/to/https://github.com/thegabriew/ProjetoFinalPOO/blob/main/Modelos/Conceitual.png)
+![alt text](path/to/https://github.com/thegabriew/ProjetoFinalPOO/blob/main/Modelos/Conceitual.png?raw=true)
