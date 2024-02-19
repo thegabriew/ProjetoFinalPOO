@@ -3,7 +3,7 @@
 # Academia Gigantes de Aço
 ## Seu shape não será apenas um sonho
 
-1 - Cadastro de Clientes: Registrar novos clientes no sistema. Informações do cliente, nome, CPF, número de telefone, e-mail, data de nascimento e plano.
+1 - Cadastro de Clientes: Registrar novos clientes no sistema. Informações do cliente, id, nome, CPF, e-mail e plano.
 ____________________________________________________________
 2 - Cadastro de Funcionários: Registrar novos funcionários no sistema. Informações do funcionário, nome, CPF, cargo, número de telefone, e-mail  e salário.
 ____________________________________________________________
