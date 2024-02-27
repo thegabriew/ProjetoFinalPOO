@@ -77,20 +77,21 @@ public class Aluno {
     Scanner scanner = new Scanner(System.in);
     System.out.println("*** ADICIONAR ALUNO ***");
     System.out.println("Digite o nome do aluno: ");
-    String nome = scanner.nextLine();
+    nome = scanner.nextLine();
     System.out.println("Digite o código do aluno: ");
-    int codAluno = scanner.nextInt();
+   codAluno = scanner.nextInt();
     System.out.println("Digite o CPF do aluno: ");
-    String cpf = scanner.nextLine();
+    cpf = scanner.nextLine();
     System.out.println("Digite a data de nascimento do aluno: ");
-    String dataNascimento = scanner.nextLine();
+    dataNascimento = scanner.nextLine();
     System.out.println("Digite o email do aluno: ");
-    String email = scanner.nextLine();
+    email = scanner.nextLine();
     System.out.println("Digite o telefone do aluno: ");
-    int telefone = scanner.nextInt();
+    telefone = scanner.nextLine();
     System.out.println("Digite o pagamento do aluno: ");
-    String pagamento = scanner.nextLine();
+    pagamento = scanner.nextLine();
     System.out.println("Aluno adicionado");
+    scanner.close();
   }
 
   void exibirAluno() {
