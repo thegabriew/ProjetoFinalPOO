@@ -1,5 +1,3 @@
-package Academia.src;
-
 public class AgendarAula {
     private int id;
     private String nome;

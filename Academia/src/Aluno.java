@@ -1,5 +1,3 @@
-package Academia.src;
-
 import java.util.Scanner;
 
 public class Aluno {

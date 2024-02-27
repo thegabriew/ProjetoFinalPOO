@@ -1,7 +1,3 @@
-package Academia.src;
-
-package ACAD;
-
 import java.util.Scanner;
 
 public class Funcionario {
