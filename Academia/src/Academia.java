@@ -2,18 +2,13 @@ import java.util.Scanner;
 
 public class Academia {
   
-  Funcionario f = new Funcionario();      
-  
-  private String nome;
+   private String nome;
   private String cnpj;
   private String UF;
   private int telefone;
-  private String f.nomeGerente;
- 
-
   
 
-  void setNome(String nome) {
+void setNome(String nome) {
     this.nome = nome;
   }
 
@@ -56,9 +51,8 @@ public class Academia {
     UF = scan.nextLine();
     System.out.println("Digite o telefone da academia: ");
     telefone = scan.nextInt();
-    System.out.println("Digite o nome do gerente: ");
-    f.nomeGerente = scan.nextLine();
     System.out.println("Academia registrada");
+    scan.close();
   }
 
   void exibirAcademia(){
@@ -67,7 +61,7 @@ public class Academia {
     System.out.println("CNPJ: " + cnpj);
     System.out.println("UF: " + UF);
     System.out.println("Telefone: " + telefone);
-    System.out.println("Nome do gerente: " + f.nomeGerente);
+
     
   }
 
