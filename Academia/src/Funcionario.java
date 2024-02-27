@@ -1,100 +1,95 @@
 package Academia.src;
 
+package ACAD;
+
 import java.util.Scanner;
 
 public class Funcionario {
+	
+	private String nome;
+	  private int codFuncionario;
+	  private String cpf;
+	  private String dataNascimento;
+	  private String email;
+	  private int telefone;
+	  private String dataContratacao;
+	  private float salario;
+	  private String cargo;
 
-  private String nome;
-  private int codFuncionario;
-  private String cpf;
-  private String dataNascimento;
-  private String email;
-  private int telefone;
-  private String dataContratacao;
-  private float salario;
-  private String cargo;
-  private String nomeInstrutor;
-  private String horarioAula;
-  private String descricaoAula;
-  
-  Aluno a = new Aluno();
-  Equipamento e = new Equipamento();
+  public String getNome() {
+		return nome;
+	}
 
-  String nomeAluno = a.getNome();
-  int codAluno = a.getCodAluno();
-  String nomeEquipamento = e.getNome();
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-  private String getCargo() {
-    return nome;
-  }
+	public int getCodFuncionario() {
+		return codFuncionario;
+	}
 
-  private void setCargo(String cargo) {
-    this.cargo = cargo;
-  }
+	public void setCodFuncionario(int codFuncionario) {
+		this.codFuncionario = codFuncionario;
+	}
 
-  private String getNome() {
-    return nome;
-  }
+	public String getCpf() {
+		return cpf;
+	}
 
-  private void setNome(String nome) {
-    this.nome = nome;
-  }
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
 
-  private int getCodFuncionario() {
-    return codFuncionario;
-  }
+	public String getDataNascimento() {
+		return dataNascimento;
+	}
 
-  private void setCodFuncionario(int codFuncionario) {
-    this.codFuncionario = codFuncionario;
-  }
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 
-  private String getCpf() {
-    return cpf;
-  }
+	public String getEmail() {
+		return email;
+	}
 
-  private void setCpf(String cpf) {
-    this.cpf = cpf;
-  }
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-  private String getDataNascimento() {
-    return dataNascimento;
-  }
+	public int getTelefone() {
+		return telefone;
+	}
 
-  private void setDataNascimento(String dataNascimento) {
-    this.dataNascimento = dataNascimento;
-  }
+	public void setTelefone(int telefone) {
+		this.telefone = telefone;
+	}
 
-  private String getEmail() {
-    return email;
-  }
+	public String getDataContratacao() {
+		return dataContratacao;
+	}
 
-  private void setEmail(String email) {
-    this.email = email;
-  }
+	public void setDataContratacao(String dataContratacao) {
+		this.dataContratacao = dataContratacao;
+	}
 
-  private int getTelefone() {
-    return telefone;
-  }
+	public float getSalario() {
+		return salario;
+	}
 
-  private void setTelefone(int telefone) {
-    this.telefone = telefone;
-  }
+	public void setSalario(float salario) {
+		this.salario = salario;
+	}
 
-  private String getDataContratacao() {
-    return dataContratacao;
-  }
+	public String getCargo() {
+		return cargo;
+	}
 
-  private void setDataContratacao(String dataContratacao) {
-    this.dataContratacao = dataContratacao;
-  }
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
 
-  private float getSalario() {
-    return salario;
-  }
 
-  private void setSalario(float salario) {
-    this.salario = salario;
-  }
+
 
   public void verificarCamposVazios() {
     if (nome == null && nome.isEmpty()) {
@@ -121,24 +116,26 @@ public class Funcionario {
   void contratarFuncionario() {
 
     Scanner scanner = new Scanner(System.in);
-    System.out.println("*** REGISTRAR FUNCIONÁRIO ***");
-    System.out.println("Digite o nome do funcionário: ");
-     nome = scanner.nextLine();
-    System.out.println("Digite o código do funcionário: ");
-     codFuncionario = scanner.nextInt();
-    System.out.println("Digite o CPF do funcionário: ");
-     cpf = scanner.nextLine();
-    System.out.println("Digite a data de nascimento do funcionário: ");
-     dataNascimento = scanner.nextLine();
-    System.out.println("Digite o email do funcionário: ");
-     email = scanner.nextLine();
-    System.out.println("Digite o telefone do funcionário: ");
-     telefone = scanner.nextInt();
-    System.out.println("Digite a data de contratação do funcionário: ");
-     dataContratacao = scanner.nextLine();
-    System.out.println("Digite o cargo do funcionário");
-     cargo = scanner.nextLine();  
-    System.out.println("Contratando funcionário");
+    System.out.println("*** REGISTRAR FUNCIONÁRIO ***\n");
+    System.out.println("\nDigite o nome do funcionário: ");
+    nome = scanner.nextLine();
+    System.out.println("\nDigite o código do funcionário: ");
+    codFuncionario = scanner.nextInt();
+    scanner.nextLine();
+    System.out.println("\nDigite o CPF do funcionário: ");
+    cpf = scanner.nextLine();
+    System.out.println("\nDigite a data de nascimento do funcionário: ");
+    dataNascimento = scanner.nextLine();
+    System.out.println("\nDigite o email do funcionário: ");
+    email = scanner.nextLine();
+    System.out.println("\nDigite o telefone do funcionário: ");
+    telefone = scanner.nextInt();
+    System.out.println("\nDigite a data de contratação do funcionário: ");
+    dataContratacao = scanner.nextLine();
+    scanner.nextLine();
+    System.out.println("\nDigite o cargo do funcionário");
+    cargo = scanner.nextLine();
+    System.out.println("FUNCIONÁRIO CONTRATADO");
 
     scanner.close();
   }
@@ -152,34 +149,6 @@ public class Funcionario {
     System.out.println("Email: " + email);
     System.out.println("Telefone: " + telefone);
     System.out.println("Data de contratação: " + dataContratacao);
-  }
-
-  void agendarAula() {
-	
-	Scanner scanner = new Scanner(System.in);
-    System.out.println("*** AGENDAR AULA ***");
-    System.out.println("Digite o nome do aluno: ");
-    nomeAluno = scanner.nextLine();
-    System.out.println("Digite o código do aluno: ");
-    codAluno = scanner.nextInt();
-    System.out.println("Digite os equipamentos usados: ");
-    nomeEquipamento = scanner.nextLine();
-    System.out.println("Digite o nome do instrutor: ");
-    nomeInstrutor = scanner.nextLine();
-    System.out.println("Digite o horário da aula: ");
-    horarioAula = scanner.nextLine();
-    System.out.println("Digite a descrição da aula: ");
-    descricaoAula = scanner.nextLine();
-  }
-
-  void exibirAula(){
-    System.out.println("*** INFORMAÇÕES DA AULA ***");
-    System.out.println("Nome do aluno: " + nomeAluno);
-    System.out.println("Código do aluno: " + codAluno);
-    System.out.println("Equipamentos usados: " + nomeEquipamento);
-    System.out.println("Nome do instrutor: " + nomeInstrutor);
-    System.out.println("Horário da aula: " + horarioAula);
-    System.out.println("Descrição da aula: " + descricaoAula);
   }
 
 }
