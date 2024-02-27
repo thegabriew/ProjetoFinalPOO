@@ -1,5 +1,3 @@
-package Academia.src;
-
 import java.util.Scanner;
 
 public class Equipamento {
@@ -64,6 +62,7 @@ public class Equipamento {
     tipo = input.nextLine();
     System.out.println("Data de compra: ");
     dataCompra = input.nextLine();
+    input.close();
   }
 
   void exibirEquipamento() {
