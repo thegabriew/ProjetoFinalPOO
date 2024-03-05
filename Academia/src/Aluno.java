@@ -1,107 +1,72 @@
-import java.util.Scanner;
+import java.sql.Date;
 
 public class Aluno {
 
   private String nome;
-  private int codAluno;
+  private int idAluno;
   private String cpf;
-  private String dataNascimento;
-  private String pagamento;
-  private String plano;
+  private Date dataNascimento;
   private String telefone;
   private String email;
 
-  void setTelefone(String telefone) {
+  public void cadAluno(String nome, String cpf, Date dataNascimento, String telefone, String email){
+    this.nome = nome;
+    this.cpf = cpf;
+    this.dataNascimento = dataNascimento;
     this.telefone = telefone;
-  }
-
-  String getTelefone() {
-    return this.telefone;
-  }
-
-  void setEmail(String email) {
     this.email = email;
   }
 
-  String getEmail() {
-    return this.email;
+  public void impAluno(){
+    System.out.println("-------Aluno-------\n");
+    System.out.println("ID: " + this.idAluno);
+    System.out.println("NOME: " + this.nome);
+    System.out.println("CPF: " + this.cpf);
+    System.out.println("DATA DE NASCIMENTO: " + this.dataNascimento);
+    System.out.println("TELEFONE: " + this.telefone);
+    System.out.println("E-MAIL: " + this.email);
+    System.out.println("--------------------");
   }
 
-  void setPlano(String plano) {
-    this.plano = plano;
+  //get's
+
+  public String getNome() {
+    return nome;
+  }
+  public int getIdAluno() {
+    return idAluno;
+  }
+  public String getCpf() {
+    return cpf;
+  }
+  public Date getDataNascimento() {
+    return dataNascimento;
+  }
+  public String getTelefone() {
+    return telefone;
+  }
+  public String getEmail() {
+    return email;
   }
 
-  String getPlano() {
-    return this.plano;
-  }
+  //set's
 
-  void setNome(String nome) {
+  public void setNome(String nome) {
     this.nome = nome;
   }
-
-  String getNome() {
-    return this.nome;
+  public void setIdAluno(int idAluno) {
+    this.idAluno = idAluno;
   }
-
-  void setCodAluno(int codAluno) {
-    this.codAluno = codAluno;
-  }
-
-  int getCodAluno() {
-    return this.codAluno;
-  }
-
-  void setCpf(String cpf) {
+  public void setCpf(String cpf) {
     this.cpf = cpf;
   }
-
-  String getCpf() {
-    return this.cpf;
-  }
-
-  void setDataNascimento(String dataNascimento) {
+  public void setDataNascimento(Date dataNascimento) {
     this.dataNascimento = dataNascimento;
   }
-
-  void setPagamento(String pagamento) {
-    this.pagamento = pagamento;
+  public void setTelefone(String telefone) {
+    this.telefone = telefone;
   }
-
-  String getPagamento() {
-    return this.pagamento;
+  public void setEmail(String email) {
+    this.email = email;
   }
-
-  void adicionarAluno() {
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("*** ADICIONAR ALUNO ***");
-    System.out.println("Digite o nome do aluno: ");
-    nome = scanner.nextLine();
-    System.out.println("Digite o código do aluno: ");
-   codAluno = scanner.nextInt();
-    System.out.println("Digite o CPF do aluno: ");
-    cpf = scanner.nextLine();
-    System.out.println("Digite a data de nascimento do aluno: ");
-    dataNascimento = scanner.nextLine();
-    System.out.println("Digite o email do aluno: ");
-    email = scanner.nextLine();
-    System.out.println("Digite o telefone do aluno: ");
-    telefone = scanner.nextLine();
-    System.out.println("Digite o pagamento do aluno: ");
-    pagamento = scanner.nextLine();
-    System.out.println("Aluno adicionado");
-    scanner.close();
-  }
-
-  void exibirAluno() {
-    System.out.println("*** INFORMAÇÕES DO ALUNO ***");
-
-    System.out.println("Nome: " + nome);
-    System.out.println("Telefone: " + telefone);
-    System.out.println("Email: " + email);
-    System.out.println("CPF: " + cpf);
-    System.out.println("Data de nascimento: " + dataNascimento);
-    System.out.println("Pagamento: " + pagamento);
-
-  }
-
 }
