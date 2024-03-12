@@ -1,7 +1,7 @@
 use ACADEMIA;
 
 CREATE TABLE academia (
-	cnpj VARCHAR(20) PRIMARY KEY NOT NULL,
+    cnpj VARCHAR(20) PRIMARY KEY NOT NULL,
     uf varchar(2) NOT NULL,
     nome varchar(90) NOT NULL,
     teleforne varchar(20),
