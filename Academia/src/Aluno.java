@@ -9,6 +9,8 @@ public class Aluno {
   private String telefone;
   private String email;
 
+  //construtor
+
   public void cadAluno(String nome, String cpf, Date dataNascimento, String telefone, String email){
     this.nome = nome;
     this.cpf = cpf;
@@ -18,14 +20,13 @@ public class Aluno {
   }
 
   public void impAluno(){
-    System.out.println("-------Aluno-------\n");
+    System.out.print("--------------\n");
     System.out.println("ID: " + this.idAluno);
     System.out.println("NOME: " + this.nome);
     System.out.println("CPF: " + this.cpf);
     System.out.println("DATA DE NASCIMENTO: " + this.dataNascimento);
     System.out.println("TELEFONE: " + this.telefone);
     System.out.println("E-MAIL: " + this.email);
-    System.out.println("--------------------");
   }
 
   //get's

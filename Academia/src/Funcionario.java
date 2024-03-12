@@ -1,150 +1,101 @@
-import java.util.Scanner;
+import java.sql.Date;
 
 public class Funcionario {
 	
+	private int idFuncionario;
+	private String cpf;
 	private String nome;
-	  private int codFuncionario;
-	  private String cpf;
-	  private String dataNascimento;
-	  private String email;
-	  private int telefone;
-	  private String dataContratacao;
-	  private float salario;
-	  private String cargo;
+	private double salario;
+	private String cargo;
+	private String telefone;
+	private String email;
+	private Date dataContratacao;
+	private Date dataNascimento;
 
-  public String getNome() {
-		return nome;
+	//construtor
+
+	public void cadFuncionario(String cpf, String nome, double salario, String cargo, String telefone, String email, Date dataContratacao, Date dataNascimento) {
+        this.cpf = cpf;
+        this.nome = nome;
+        this.salario = salario;
+        this.cargo = cargo;
+        this.telefone = telefone;
+        this.email = email;
+        this.dataContratacao = dataContratacao;
+        this.dataNascimento = dataNascimento;
+    }
+
+	public void impFuncionario(){
+		System.out.print("--------------\n");
+		System.out.println("ID: " + getIdFuncionario());
+		System.out.println("CPF: " + getCpf());
+		System.out.println("NOME: " + getNome());
+		System.out.println("CARGO: " + getCargo());
+		System.out.println("SALÁRIO: " + getSalario());
+		System.out.println("E-MAIL: " + getEmail());
+		System.out.println("TELEFONE: " + getTelefone());
+		System.out.println("DATA DE CONTRATAÇÃO: " + getDataContratacao());
+		System.out.println("DATA DE NASCIMENTE: " + getDataNascimento());
+
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+	//get's
 
-	public int getCodFuncionario() {
-		return codFuncionario;
+	public int getIdFuncionario() {
+		return idFuncionario;
 	}
-
-	public void setCodFuncionario(int codFuncionario) {
-		this.codFuncionario = codFuncionario;
-	}
-
 	public String getCpf() {
 		return cpf;
 	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public String getNome() {
+		return nome;
 	}
-
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
-
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public int getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(int telefone) {
-		this.telefone = telefone;
-	}
-
-	public String getDataContratacao() {
-		return dataContratacao;
-	}
-
-	public void setDataContratacao(String dataContratacao) {
-		this.dataContratacao = dataContratacao;
-	}
-
-	public float getSalario() {
+	public double getSalario() {
 		return salario;
 	}
-
-	public void setSalario(float salario) {
-		this.salario = salario;
-	}
-
 	public String getCargo() {
 		return cargo;
 	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public Date getDataContratacao() {
+		return dataContratacao;
+	}
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
 
+	//set's
+
+	public void setIdFuncionario(int idFuncionario) {
+		this.idFuncionario = idFuncionario;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-
-
-
-
-  public void verificarCamposVazios() {
-    if (nome == null && nome.isEmpty()) {
-      System.out.println("Campo 'Nome do funcionário' não pode estar vazio");
-    }
-    if (cpf == null && cpf.isEmpty()) {
-      System.out.println("Campo 'CPF' não pode estar vazio");
-    }
-    if (dataNascimento == null && dataNascimento.isEmpty()) {
-      System.out.println("Campo 'Data de nascimento' não pode estar vazio");
-    }
-
-    if (email == null && email.isEmpty()) {
-      System.out.println("O campo 'E-mail' não pode estar vazio");
-    }
-    if (telefone == 0) {
-      System.out.println("O campo 'Telefone' não pode estar vazio");
-    }
-    if (dataContratacao == null && dataContratacao.isEmpty()) {
-      System.out.println("O campo 'Data de contratação' não pode estar vazio");
-    }
-  }
-
-  void contratarFuncionario() {
-
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("*** REGISTRAR FUNCIONÁRIO ***\n");
-    System.out.println("\nDigite o nome do funcionário: ");
-    nome = scanner.nextLine();
-    System.out.println("\nDigite o código do funcionário: ");
-    codFuncionario = scanner.nextInt();
-    scanner.nextLine();
-    System.out.println("\nDigite o CPF do funcionário: ");
-    cpf = scanner.nextLine();
-    System.out.println("\nDigite a data de nascimento do funcionário: ");
-    dataNascimento = scanner.nextLine();
-    System.out.println("\nDigite o email do funcionário: ");
-    email = scanner.nextLine();
-    System.out.println("\nDigite o telefone do funcionário: ");
-    telefone = scanner.nextInt();
-    System.out.println("\nDigite a data de contratação do funcionário: ");
-    dataContratacao = scanner.nextLine();
-    scanner.nextLine();
-    System.out.println("\nDigite o cargo do funcionário");
-    cargo = scanner.nextLine();
-    System.out.println("FUNCIONÁRIO CONTRATADO");
-
-    scanner.close();
-  }
-
-  void exibirFuncionario() {
-    System.out.println("*** INFORMAÇÕES DO FUNCIONÁRIO ***");
-    System.out.println("Nome: " + nome);
-    System.out.println("Código: " + codFuncionario);
-    System.out.println("CPF: " + cpf);
-    System.out.println("Data de nascimento: " + dataNascimento);
-    System.out.println("Email: " + email);
-    System.out.println("Telefone: " + telefone);
-    System.out.println("Data de contratação: " + dataContratacao);
-  }
-
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public void setDataContratacao(Date dataContratacao) {
+		this.dataContratacao = dataContratacao;
+	}
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 }

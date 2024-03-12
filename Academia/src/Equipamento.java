@@ -1,75 +1,72 @@
-import java.util.Scanner;
+import java.sql.Date;
 
 public class Equipamento {
 
   private String nome;
-  private int codEquipamento;
+  private int idEquipamento;
   private String tipo;
-  private String dataCompra;
+  private Date dataCompra;
+  private String descricao;
 
-  void setNome(String nome) {
+  //construtor
+
+  public void cadEquipamento(String nome, String tipo, Date dataCompra, String descricao) {
+    this.nome = nome;
+    this.tipo = tipo;
+    this.dataCompra = dataCompra;
+    this.descricao = descricao;
+  }
+
+  void impEquip() {
+    System.out.print("--------------\n");
+    System.out.println("ID: " + getIdEquipamento());
+    System.out.println("NOME: " + getNome());
+    System.out.println("TIPO: " + getTipo());
+    System.out.println("DATA DA COMPRA: " + getDataCompra());
+    System.out.println("DESCRIÇÃO: " + getDescricao());
+  }
+
+  //get's
+
+  public String getNome() {
+    return nome;
+  }
+
+  public int getIdEquipamento() {
+    return idEquipamento;
+  }
+
+  public String getTipo() {
+    return tipo;
+  }
+
+  public Date getDataCompra() {
+    return dataCompra;
+  }
+
+  public String getDescricao() {
+    return descricao;
+  }
+
+  //set's
+
+  public void setNome(String nome) {
     this.nome = nome;
   }
 
-  String getNome() {
-    return this.nome;
+  public void setIdEquipamento(int idEquipamento) {
+    this.idEquipamento = idEquipamento;
   }
 
-  void setCodEquipamento(int codEquipamento) {
-    this.codEquipamento = codEquipamento;
-  }
-
-  int getCodEquipamento() {
-    return this.codEquipamento;
-  }
-
-  void setTipo(String tipo) {
+  public void setTipo(String tipo) {
     this.tipo = tipo;
   }
 
-  String getTipo() {
-    return this.tipo;
-  }
-
-  void setDataCompra(String dataCompra) {
+  public void setDataCompra(Date dataCompra) {
     this.dataCompra = dataCompra;
   }
 
-  String getDataCompra(){
-    return this.dataCompra;
-  }
-
-  void verificarCamposVazios() {
-    if (nome == null && nome.isEmpty()) {
-      System.out.println("Campo 'Nome do equipamento' não pode estar vazio");
-    }
-    if (tipo == null && tipo.isEmpty()) {
-      System.out.println("Campo 'Tipo do equipamento' não pode estar vazio");
-    }
-    if (dataCompra == null && dataCompra.isEmpty()) {
-      System.out.println("Campo 'Data de compra' não pode estar vazio");
-    }
-  }
-
-  void registrarEquipamento() {
-    Scanner input = new Scanner(System.in);
-    System.out.println("*** REGISTRO DE EQUIPAMENTO ***");
-    System.out.println("Nome do equipamento: ");
-    nome = input.nextLine();
-    System.out.println("Código do equipamento: ");
-    codEquipamento = input.nextInt();
-    System.out.println("Tipo do equipamento: ");
-    tipo = input.nextLine();
-    System.out.println("Data de compra: ");
-    dataCompra = input.nextLine();
-    input.close();
-  }
-
-  void exibirEquipamento() {
-    System.out.println("*** INFORMAÇÕES DO EQUIPAMENTO ***");
-    System.out.println("Nome: " + nome);
-    System.out.println("Código: " + codEquipamento);
-    System.out.println("Tipo: " + tipo);
-    System.out.println("Data de compra: " + dataCompra);
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
   }
 }

@@ -20,13 +20,14 @@ public class Conexao{
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Falha na conexão.");
+            System.out.println("Falha na conexão! " + "##" + e.getMessage() + "##");
         }
 
         return connection;         
     }
-
+/*
     public static void main(String[] args) {
         getConexaoMySQL();
     }
+*/
 }
