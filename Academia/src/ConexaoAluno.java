@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 public class ConexaoAluno {
 
-    //create
+    // create
 
-    public static void insertData(Connection conn, Aluno a) throws SQLException{
+    public static void insertData(Connection conn, Aluno a) throws SQLException {
         String sql = "INSERT INTO aluno (nome, cpf, telefone, email, dataNascimento) VALUES (?, ?, ?, ?, ?)";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)){
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, a.getNome());
             pstmt.setString(2, a.getCpf());
             pstmt.setString(3, a.getTelefone());
@@ -24,59 +24,51 @@ public class ConexaoAluno {
         }
     }
 
-    //cadastrando aluno
+    // cadastrando aluno
 
-    public static void insAluno(Connection conn){
+    public static void insAluno(Connection conn) {
         try {
             Scanner scanner = new Scanner(System.in);
-            boolean continuar = true;
-            while (continuar) {
 
-                System.out.print("NOME: ");
-                String nome = scanner.nextLine();
+            System.out.print("NOME: ");
+            String nome = scanner.nextLine();
 
-                System.out.print("CPF: ");
-                String cpf = scanner.nextLine();
+            System.out.print("CPF: ");
+            String cpf = scanner.nextLine();
 
-                System.out.print("TELEFONE: ");
-                String telefone = scanner.nextLine();
+            System.out.print("TELEFONE: ");
+            String telefone = scanner.nextLine();
 
-                System.out.print("E-MAIL: ");
-                String email = scanner.nextLine();
+            System.out.print("E-MAIL: ");
+            String email = scanner.nextLine();
 
-                System.out.print("DATA DE NASCIMENTO (AAAA-MM-DD): ");
-                String dataNascimentoStr = scanner.nextLine();
-                Date dataNascimento = Date.valueOf(dataNascimentoStr);
+            System.out.print("DATA DE NASCIMENTO (AAAA-MM-DD): ");
+            String dataNascimentoStr = scanner.nextLine();
+            Date dataNascimento = Date.valueOf(dataNascimentoStr);
 
-                Aluno newAluno = new Aluno();
-                newAluno.setCpf(cpf);
-                newAluno.setNome(nome);
-                newAluno.setEmail(email);
-                newAluno.setTelefone(telefone);
-                newAluno.setDataNascimento(dataNascimento);
+            Aluno newAluno = new Aluno();
+            newAluno.setCpf(cpf);
+            newAluno.setNome(nome);
+            newAluno.setEmail(email);
+            newAluno.setTelefone(telefone);
+            newAluno.setDataNascimento(dataNascimento);
 
-                insertData(conn, newAluno);
+            insertData(conn, newAluno);
 
-                System.out.print("\nDeseja inserir outro aluno? (s/n): ");
-                String keep = scanner.nextLine();
-                if(keep.equals("n")){
-                    continuar = false;
-                }
-            }
             scanner.close();
         } catch (Exception e) {
             System.out.println("Erro ao inserir aluno!" + e.getMessage());
         }
     }
 
-    //read
+    // read
 
     @SuppressWarnings("rawtypes")
-    public static ArrayList selectData(Connection conn) throws SQLException{
-        
+    public static ArrayList selectData(Connection conn) throws SQLException {
+
         String sql = "SELECT * FROM aluno";
         ArrayList<Aluno> listAluno = new ArrayList<>();
-        try(Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)){
+        try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
                 Aluno a = new Aluno();
                 a.setIdAluno(rs.getInt("idAluno"));
@@ -92,13 +84,13 @@ public class ConexaoAluno {
         return listAluno;
     }
 
-    //imprimindo alunos
+    // imprimindo alunos
 
     @SuppressWarnings("unchecked")
-    public static void impAluno(Connection conn){
+    public static void impAluno(Connection conn) {
         try {
             ArrayList<Aluno> listAluno = ConexaoAluno.selectData(conn);
-            for(Aluno a: listAluno){
+            for (Aluno a : listAluno) {
                 a.impAluno();
             }
         } catch (Exception e) {
@@ -106,11 +98,11 @@ public class ConexaoAluno {
         }
     }
 
-    //update
+    // update
 
-    public static void updateData(Connection conn, Aluno a) throws SQLException{
+    public static void updateData(Connection conn, Aluno a) throws SQLException {
         String sql = "UPDATE aluno SET nome = ?, cpf = ?, telefone = ?, dataNascimento = ?, email = ? WHERE idAluno = ?";
-        try(PreparedStatement pstmt = conn.prepareStatement(sql)){
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, a.getNome());
             pstmt.setString(2, a.getCpf());
             pstmt.setString(3, a.getTelefone());
@@ -122,10 +114,10 @@ public class ConexaoAluno {
         }
     }
 
-    //atualizando cadastro
+    // atualizando cadastro
 
     @SuppressWarnings("unchecked")
-    public static void atAluno(Connection conn) throws SQLException{
+    public static void atAluno(Connection conn) throws SQLException {
         try {
             Scanner scanner = new Scanner(System.in);
 
@@ -135,48 +127,38 @@ public class ConexaoAluno {
 
             ArrayList<Aluno> listaluno = selectData(conn);
             boolean encontrado = false;
-            for(Aluno a : listaluno){
-                if(a.getIdAluno() == idAluno){
+            for (Aluno a : listaluno) {
+                if (a.getIdAluno() == idAluno) {
                     encontrado = true;
-                    boolean continuar = true;
-                    while (continuar) {
 
-                        System.out.print("NOME: ");
-                        String nome = scanner.nextLine();
+                    System.out.print("NOME: ");
+                    String nome = scanner.nextLine();
 
-                        System.out.print("CPF: ");
-                        String cpf = scanner.nextLine();
+                    System.out.print("CPF: ");
+                    String cpf = scanner.nextLine();
 
-                        System.out.print("TELEFONE: ");
-                        String telefone = scanner.nextLine();
+                    System.out.print("TELEFONE: ");
+                    String telefone = scanner.nextLine();
 
-                        System.out.print("E-MAIL: ");
-                        String email = scanner.nextLine();
+                    System.out.print("E-MAIL: ");
+                    String email = scanner.nextLine();
 
-                        System.out.print("DATA DE NASCIMENTO (AAAA-MM-DD): ");
-                        String dataNascimentoStr = scanner.nextLine();
-                        Date dataNascimento = Date.valueOf(dataNascimentoStr);
+                    System.out.print("DATA DE NASCIMENTO (AAAA-MM-DD): ");
+                    String dataNascimentoStr = scanner.nextLine();
+                    Date dataNascimento = Date.valueOf(dataNascimentoStr);
 
-                        Aluno upAluno = new Aluno();
-                        upAluno.setCpf(cpf);
-                        upAluno.setNome(nome);
-                        upAluno.setEmail(email);
-                        upAluno.setTelefone(telefone);
-                        upAluno.setDataNascimento(dataNascimento);
+                    Aluno upAluno = new Aluno();
+                    upAluno.setCpf(cpf);
+                    upAluno.setNome(nome);
+                    upAluno.setEmail(email);
+                    upAluno.setTelefone(telefone);
+                    upAluno.setDataNascimento(dataNascimento);
 
-                        updateData(conn, upAluno);
-
-                        System.out.print("\nDeseja atualizar outro Aluno? (s/n)");
-                        String keep = scanner.nextLine();
-
-                        if(keep.equals("n")){
-                            continuar = false;
-                        }
-                    }
+                    updateData(conn, upAluno);
                 }
             }
 
-            if(!encontrado){
+            if (!encontrado) {
                 System.out.println("Aluno não encontrado!");
             }
 
@@ -186,37 +168,29 @@ public class ConexaoAluno {
         }
     }
 
-    //delete
+    // delete
 
-    public static void deleteData(Connection conn, int a) throws SQLException{
+    public static void deleteData(Connection conn, int a) throws SQLException {
         String sql = "DELETE FROM aluno WHERE idAluno = ?";
-        try(PreparedStatement pstmt = conn.prepareStatement(sql)){
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, a);
             pstmt.executeUpdate();
             System.out.println("Aluno removido com sucesso!");
         }
     }
 
-    //deletando aluno
+    // deletando aluno
 
-    public static void delAluno(Connection conn) throws SQLException{
+    public static void delAluno(Connection conn) throws SQLException {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            boolean continuar = true;
-            while (continuar) {
-                System.out.print("Digite o ID do aluno a ser deletado: ");
-                int idAluno = scanner.nextInt();
-                scanner.nextLine();
+            System.out.print("Digite o ID do aluno a ser deletado: ");
+            int idAluno = scanner.nextInt();
+            scanner.nextLine();
 
-                deleteData(conn, idAluno);
+            deleteData(conn, idAluno);
 
-                System.out.print("\nDeseja deletar outro aluno? (s/n): ");
-                String keep = scanner.nextLine();
-                if(keep.equalsIgnoreCase("n")){
-                    continuar = false;
-                }
-            }
             scanner.close();
         } catch (Exception e) {
             System.out.println("Erro ao deletar funcionário!" + e.getMessage());

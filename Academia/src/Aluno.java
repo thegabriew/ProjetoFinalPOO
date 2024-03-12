@@ -27,6 +27,7 @@ public class Aluno {
     System.out.println("DATA DE NASCIMENTO: " + this.dataNascimento);
     System.out.println("TELEFONE: " + this.telefone);
     System.out.println("E-MAIL: " + this.email);
+    System.out.print("--------------\n");
   }
 
   //get's
